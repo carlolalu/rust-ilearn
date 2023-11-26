@@ -20,3 +20,6 @@ chapter 3 official-book, chapter 2 official-book, correspondent chapters from ru
 - successively I will need to understand if proceed parallelly chapter by chapter or subsection by sebsection for the two, if there is compatibility.
 
 I just took a quick look at the oreilly book. I would like to try to learn a bit from it as well.
+
+
+***great exercise source: codewars and similar websites***

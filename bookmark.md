@@ -1,8 +1,8 @@
 # official-book
 
-chapter 2: to be done after chapter 3
+actual: chapter 2
 
-actual: exercises end of chapter 3
+then jump to chapter4
 
 # rust-by-practice
 
