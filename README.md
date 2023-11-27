@@ -23,3 +23,7 @@ I just took a quick look at the oreilly book. I would like to try to learn a bit
 
 
 ***great exercise source: codewars and similar websites***
+
+# update 28.11.2023
+
+I feel again that the online book is too simple. And the truth is that I will not read again the oreilly book if I will finish the official one. What should I do? Dive deep and HEAVY or SURF DELIGHTLY on the surface?
