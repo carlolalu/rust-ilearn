@@ -5,14 +5,21 @@ use std::io;
 fn main() {
     println!("Hello, world!");
 
-    let monthly_income = receive_positive_input("Monthly income: ");
+    let netto_hour_payment = receive_positive_input("money/hour (netto): ");
+    let work_hrs_per_week = receive_positive_input("hrs of work per week: ");
     let monthly_expenses = receive_positive_input("Monthly expenses: ");
-
     let months = receive_positive_input("Amount of time in months in which you want to spare: ");
+
+    let monthly_income = calculate_monhtly_income(netto_hour_payment, work_hrs_per_week);
 
     let total_spare_money = (monthly_income - monthly_expenses)*months;
 
     println!("The amount of wealth you can spare in {} months with a monthly expense of {} and a monthly income of {} is {}", months, monthly_expenses, monthly_income, total_spare_money);    
+}
+
+fn calculate_monhtly_income(netto_hour_payment : f64, work_hrs_per_week : f64) -> f64 {
+    let weeks_in_1_month = 4;
+    netto_hour_payment * work_hrs_per_week * (weeks_in_1_month as f64)
 }
 
 
