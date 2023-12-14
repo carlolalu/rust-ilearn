@@ -8,7 +8,7 @@ after each chapter/commit I should try to do some of rust-by-practice or codewar
 
 # rust-by-practice
 
-actual: 7
+actual: 8
 
 # oreilly
 
