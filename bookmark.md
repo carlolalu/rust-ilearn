@@ -16,7 +16,7 @@ actual: 8
 
 (The core of the language arrives to page 390, i.e. the end of chapter 15. The rust is more advanced stuff, that I could eventually cover in a different future)
 
-actual: chapter 6 (expressions)
+actual: chapter 7
 
 # design patterns
 
