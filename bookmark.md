@@ -18,6 +18,8 @@ actual: 8
 
 actual: chapter 7
 
+// exercise
+
 # design patterns
 
 done: creational (factory, singleton), behavioural (), structural ()
