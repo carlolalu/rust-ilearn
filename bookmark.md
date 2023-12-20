@@ -10,6 +10,8 @@ after each chapter/commit I should try to do some of rust-by-practice or codewar
 
 actual: 8
 
+// exercise
+
 # oreilly
 
 (The core of the language arrives to page 390, i.e. the end of chapter 15. The rust is more advanced stuff, that I could eventually cover in a different future)
