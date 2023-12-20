@@ -4,6 +4,7 @@ I usually mark the topic I must start.
 
 actual: 7 (crates and modules)
 
+
 after each chapter/commit I should try to do some of rust-by-practice or codewars
 
 # rust-by-practice
