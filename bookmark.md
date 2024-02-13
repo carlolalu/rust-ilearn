@@ -1,29 +1,34 @@
 I usually mark the topic I must start.
 
-# official-book
+# theory:
+
+## official-book
 
 actual: 7 (crates and modules)
 
-
 after each chapter/commit I should try to do some of rust-by-practice or codewars
 
-# rust-by-practice
+## oreilly
+
+(The core of the language arrives to page 390, i.e. the end of chapter 15. The rust is more advanced stuff, that I could eventually cover in a different future)
+
+actual: chapter 8 - end
+
+## design patterns
+
+done: creational (factory, singleton), behavioural (), structural ()
+
+# Practice (ideas and similar)
+
+## projects advised by victor:
+build programs to operate on a text-based web-browser, as
+https://en.wikipedia.org/wiki/W3m, https://en.wikipedia.org/wiki/Lynx_(web_browser)
+
+## rust-by-practice
 
 actual: 8
 
 // exercise
-
-# oreilly
-
-(The core of the language arrives to page 390, i.e. the end of chapter 15. The rust is more advanced stuff, that I could eventually cover in a different future)
-
-actual: chapter 7
-
-// exercise
-
-# design patterns
-
-done: creational (factory, singleton), behavioural (), structural ()
 
 ## at the end of each git push: one small exercise of some kind
 
