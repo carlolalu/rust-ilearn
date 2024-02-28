@@ -4,15 +4,11 @@ I usually mark the topic I must start.
 
 ## official-book
 
-actual: 7 (crates and modules)
-
-after each chapter/commit I should try to do some of rust-by-practice or codewars
+actual: 7 - end
 
 ## oreilly
 
-(The core of the language arrives to page 390, i.e. the end of chapter 15. The rust is more advanced stuff, that I could eventually cover in a different future)
-
-actual: chapter 8 - end
+actual: 8 - end
 
 ## design patterns
 
