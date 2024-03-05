@@ -4,7 +4,7 @@ I usually mark the topic I must start.
 
 ## official-book
 
-actual: 8 - exercises at 8.3
+actual: 9 - end
 
 ## oreilly
 
