@@ -4,7 +4,7 @@ I usually mark the topic I must start.
 
 ## official-book
 
-actual: 8 - end
+actual: 8 - exercises at 8.3
 
 ## oreilly
 
@@ -16,10 +16,11 @@ done: creational (factory, singleton), behavioural (), structural ()
 
 # Practice (ideas and similar)
 
-## projects advised by victor:
-build programs to operate on a text-based web-browser, as
+## projects:
+advised by victor: build programs to operate on a text-based web-browser, as
 https://en.wikipedia.org/wiki/W3m, https://en.wikipedia.org/wiki/Lynx_(web_browser)
 
+very good rust projects: https://zerotomastery.io/blog/rust-practice-projects/
 ## rust-by-practice
 
 actual: 8
