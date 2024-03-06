@@ -4,7 +4,7 @@ I usually mark the topic I must start.
 
 ## official-book
 
-actual: 9 - end
+actual: 10 - end
 
 ## oreilly
 
@@ -18,17 +18,13 @@ done: creational (factory, singleton), behavioural (), structural ()
 
 ## projects:
 advised by victor: build programs to operate on a text-based web-browser, as
-https://en.wikipedia.org/wiki/W3m, https://en.wikipedia.org/wiki/Lynx_(web_browser)
+https://en.wikipedia.org/wiki/W3m
 
 very good rust projects: https://zerotomastery.io/blog/rust-practice-projects/
-## rust-by-practice
 
-actual: 8
+codewars, telegram-bot, 
 
-// exercise
+another idea could be to create a text converter to write everything in a stupid 2000s ways:
+'Oh My G0D U LuK f4b0ul0u$', perfect for talpe
 
 ## at the end of each git push: one small exercise of some kind
-
-update: the plan is to follow now chapter 6 from the practice book and chapter 6 from the 'oreilly. I need an exercise at the end of each chapter.
-
-update 10.12.2023: slices are to me absolutely not clear, I need to find a good reference to it and study them again and again, together with exercises.
