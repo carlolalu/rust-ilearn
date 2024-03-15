@@ -4,11 +4,15 @@ I usually mark the topic I must start.
 
 ## official-book
 
-actual: 10 - end
+actual: 11 - end
+
+left temporarily behind: 14
 
 ## oreilly
 
 actual: 9 - end
+
+left temporarily behind: 10
 
 ## design patterns
 
@@ -23,7 +27,7 @@ do exercises with the platform 'exercisism', it is particularly good!!!
 advised by victor: build programs to operate on a text-based web-browser, as
 https://en.wikipedia.org/wiki/W3m
 
-rust projects WALKTHROUGH:
+rust projects WALKTHROUGH, very knorcke projects:
 https://www.youtube.com/watch?v=-Jp7sabBCp4&list=PLJbE2Yu2zumDD5vy2BuSHvFZU0a6RDmgb
 
 very good rust projects: https://zerotomastery.io/blog/rust-practice-projects/
