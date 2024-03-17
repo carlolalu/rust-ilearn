@@ -20,6 +20,12 @@ left temporarily behind: 10
 
 done: creational (factory, singleton), behavioural (), structural ()
 
+## concurrency
+
+official: 16.1
+
+oreilly:
+
 # Practice (ideas and similar)
 
 ## projects:
