@@ -4,7 +4,9 @@ I usually mark the topic I must start.
 
 ## official-book
 
-actual: 11 - end
+actual: 12.2 - end
+
+(chapter 12 is actually a very good resource on how to build incrementally a project!)
 
 left temporarily behind: 14
 
