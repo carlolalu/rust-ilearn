@@ -2,15 +2,13 @@
 use std::fs;
 use std::error::Error;
 
-// For the error type, we used the trait object Box<dyn Error> (and we’ve brought std::error::Error into scope with a use statement at the top). We’ll cover trait objects in Chapter 17. For now, just know that Box<dyn Error> means the function will return a type that implements the Error trait, but we don’t have to specify what particular type the return value will be. This gives us flexibility to return error values that may be of different types in different error cases.
-
 pub fn run(config: Config) -> Result<(), Box<dyn Error> > {
     let contents = fs::read_to_string(config.file_path)?;
 
-    println!(
-        "The given file_path points ot a file with contents {}",
-        contents
-    );
+    for line in search(&config.query, &contents) {
+        println!("{line}");
+    }
+
 
     Ok(())
 }
@@ -31,4 +29,35 @@ impl Config {
             })
         }
     }
+}
+
+
+
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn one_result() {
+        let query = "duct";
+        let contents = "\
+Rust:
+safe, fast, productive.
+Pick three.";
+
+        assert_eq!(vec!["safe, fast, productive."], search(query, contents));
+    }
+}
+
+fn search<'a>(query : &str, contents: &'a str) -> Vec<&'a str> {
+    let mut results = Vec::<&str>::new();
+
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+
+    results
 }
