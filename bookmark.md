@@ -4,11 +4,11 @@ I usually mark the topic I must start.
 
 ## official-book
 
-actual: 12 - end
-
-(chapter 12 is actually a very good resource on how to build incrementally a project!)
+actual: 13 - end
 
 left temporarily behind: 14
+
+! BEFORE MOVING TO CHAPTER 16 read ch 11 and 14 from the 'oreilly, you need details on traits and closure !!
 
 ## oreilly
 
@@ -35,6 +35,8 @@ https://www.youtube.com/watch?v=-Jp7sabBCp4&list=PLJbE2Yu2zumDD5vy2BuSHvFZU0a6RD
 very good rust projects: https://zerotomastery.io/blog/rust-practice-projects/
 
 codewars, telegram-bot, 
+
+(chapter 12 of the official book is actually a very good resource on how to build incrementally a project!)
 
 another idea could be to create a text converter to write everything in a stupid 2000s ways:
 'Oh My G0D U LuK f4b0ul0u$', perfect for talpe
