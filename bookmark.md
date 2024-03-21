@@ -12,9 +12,9 @@ left temporarily behind: 14
 
 ## oreilly
 
-actual: 9 - end
+actual: 11 - end
 
-left temporarily behind: 10
+left temporarily behind: 10,12,13
 
 ## design patterns
 
