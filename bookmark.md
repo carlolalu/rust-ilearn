@@ -12,9 +12,9 @@ left temporarily behind: 14
 
 ## oreilly
 
-actual: 11 - end
+actual: 14 - end
 
-left temporarily behind: 10,12,13
+left temporarily behind: 10,12,13,16,17
 
 ## design patterns
 
@@ -33,6 +33,10 @@ rust projects WALKTHROUGH, very knorcke projects:
 https://www.youtube.com/watch?v=-Jp7sabBCp4&list=PLJbE2Yu2zumDD5vy2BuSHvFZU0a6RDmgb
 
 very good rust projects: https://zerotomastery.io/blog/rust-practice-projects/
+
+plot stuff with nalgebra and plotters
+
+make simulations with rapier
 
 codewars, telegram-bot, 
 
