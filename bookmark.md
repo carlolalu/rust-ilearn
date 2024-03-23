@@ -1,4 +1,15 @@
-I usually mark the topic I must start.
+## plan: 
+exercises (abundant all along each path), 
+ch15 official,
+concurrency: ch16 official,
+
+ch2 oreilly: do the mandelbrot set
+
+dive deeper:
+oreilly ch15 (iterators)
+oreilly ch19,20 (concurrency, parallelism and async)
+oreilly ch18 (file writing a small intro to networking wiht refrences as well)
+
 
 # theory:
 
@@ -8,7 +19,7 @@ actual: 13 - end
 
 left temporarily behind: 14
 
-! BEFORE MOVING TO CHAPTER 16 read ch 11 and 14 from the 'oreilly, you need details on traits and closure !!
+! BEFORE MOVING TO CHAPTER 16 read ch 11,14,15 from the 'oreilly !
 
 ## oreilly
 
