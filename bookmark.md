@@ -1,14 +1,18 @@
 ## plan: 
-exercises (abundant all along each path), 
 ch15 official,
 concurrency: ch16 official,
-
-ch2 oreilly: do the mandelbrot set
 
 dive deeper:
 oreilly ch15 (iterators)
 oreilly ch19,20 (concurrency, parallelism and async)
 oreilly ch18 (file writing a small intro to networking wiht refrences as well)
+
+EXERCISES:
+http://nifty.stanford.edu/
+exercisism: Parallel Letter Frequency 
+ch2 oreilly: do the mandelbrot set
+other books offline
+
 
 
 # theory:

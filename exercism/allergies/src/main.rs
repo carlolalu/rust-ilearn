@@ -4,7 +4,20 @@
 // given a dish, which have certain ingredients in certain quantitities (grams for example), the program must tell how much a person is allergic to that dish in all the ways judged apt:
 // for example could be good on an absolute term in relation to the ingredients' quantities, or in a proportional term in relation to the ingredients' proportions
 
+// now I should work to build a small GUI with ratatui
+
 use std::collections::HashMap;
+
+use crossterm::{
+    event::{self, KeyCode, KeyEventKind},
+    terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
+    ExecutableCommand,
+};
+use ratatui::{
+    prelude::{CrosstermBackend, Stylize, Terminal},
+    widgets::Paragraph,
+};
+use std::io::{stdout, Result};
 
 #[derive(Debug)]
 struct Person {
@@ -88,7 +101,12 @@ impl Dish {
     }
 }
 
-fn main() {
+fn main() -> Result<()> {
+    stdout().execute(EnterAlternateScreen)?;
+    enable_raw_mode()?;
+    let mut terminal = Terminal::new(CrosstermBackend::new(stdout()))?;
+    terminal.clear()?;
+
     let mut mike = Person::new("Mike");
     mike.set_allergy("eggs", 1);
     mike.set_allergy("kryptonite", 600);
@@ -104,16 +122,33 @@ fn main() {
     strange_borscht.set_ingredient("frogs", 1);
     strange_borscht.set_ingredient("kryptonite", 1);
 
-    println!("We have {:?} and {:?}", mike, strange_borscht);
+    loop {
+        terminal.draw(|frame| {
+            let area = frame.size();
+            frame.render_widget(
+                Paragraph::new("let us compare the different allergy scores:\nthe absolute one of {} is {}, while his allergic score to {} is {}, and his proportional allergic score to it is {}\nPRESS 'q' TO EXIT\nPRESS 'q' TO EXIT\nPRESS 'q' TO EXIT\nPRESS 'q' TO EXIT")
+                    .black()
+                    .on_magenta(),
+                area,
+            );
+        })?;
 
-    println!(
-        "{} has an absolute allergy score to {} of {}",
-        mike.name,
-        strange_borscht.name,
-        mike.get_allergic_score_to(&strange_borscht)
-    );
+        if event::poll(std::time::Duration::from_millis(16))? {
+            if let event::Event::Key(key) = event::read()? {
+                if key.kind == KeyEventKind::Press
+                    && key.code == KeyCode::Char('q')
+                {
+                    break;
+                }
+            }
+        }
+    }
 
     println!("let us compare the different allergy scores:\nthe absolute one of {} is {}, while his allergic score to {} is {}, and his proportional allergic score to it is {}", mike.name, mike.get_total_allergic_score(), strange_borscht.name, mike.get_allergic_score_to(&strange_borscht), mike.get_proportional_allergic_score_to(&strange_borscht));
+
+    stdout().execute(LeaveAlternateScreen)?;
+    disable_raw_mode()?;
+    Ok(())
 }
 
 #[cfg(test)]
