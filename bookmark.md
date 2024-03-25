@@ -1,35 +1,40 @@
 ## plan: 
 ch15 official,
+
 concurrency: ch16 official,
 
-dive deeper:
-oreilly ch15 (iterators)
-oreilly ch19,20 (concurrency, parallelism and async)
-oreilly ch18 (file writing a small intro to networking wiht refrences as well)
+official advanced features (chapter 17,18,19)
+official final project: chapter 20
 
-EXERCISES:
+oreilly ch19,20 (concurrency, parallelism and async)
+tokio tutorials
+rayon tutorials
+
+dive deeper: read chapter 14 of official. Oreilly ch 15,18 (input and output), cover oreilly chapters left (temporarily?) behind
+
+dive into data visualization with rapier, plotters and similar
+
+### EXERCISES:
 http://nifty.stanford.edu/
 exercisism: Parallel Letter Frequency 
-ch2 oreilly: do the mandelbrot set
+ch2 oreilly: do the mandelbrot set and other visualization things
+treat physical models and their visualisation
 other books offline
-
 
 
 # theory:
 
 ## official-book
 
-actual: 13 - end
+actual: 15.6 - end
 
-left temporarily behind: 14
-
-! BEFORE MOVING TO CHAPTER 16 read ch 11,14,15 from the 'oreilly !
+left behind: 14
 
 ## oreilly
 
 actual: 14 - end
 
-left temporarily behind: 10,12,13,16,17
+left temporarily behind: 10,12,13,16,17,21-23
 
 ## design patterns
 
