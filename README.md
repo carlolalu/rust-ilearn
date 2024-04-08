@@ -1,12 +1,12 @@
 # rust-ilearn
-A repo where I learn rust. 
+A repo where I learn rust.
 
 I have now 2 main sources.
 
 1. the online official book.
 It is a good guide but it is written for maybe people with too little background. This is slightly disappointing, but most of all risks to lack the comparison with other languages. For example when introducing rust references somebody would make comparison with cpp, but judging from the approach of the book, it will avoid to dive into such knowledge which could be scary for somebody. Besides, it lacks exercises.
 
-- bookmark: 16 - end
+- bookmark: 17 - end
 
 - left behind: 14
 
