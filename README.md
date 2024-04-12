@@ -6,15 +6,14 @@ I have now 2 main sources.
 1. the online official book.
 It is a good guide but it is written for maybe people with too little background. This is slightly disappointing, but most of all risks to lack the comparison with other languages. For example when introducing rust references somebody would make comparison with cpp, but judging from the approach of the book, it will avoid to dive into such knowledge which could be scary for somebody. Besides, it lacks exercises.
 
-- bookmark: 17 - end
-
+- bookmark: 18 - end (extremely useful pattern syntax!!!)
 - left behind: 14
 
 2. the oreilly book.
 It totally has the advanced level required, but maybe properly because of this it is too advanced. Chapter 2 exposes me to concepts which I have no idea about, in particular about networking and concurrency (of which I would still like to learn one day). The book has no exercises but these examples, again.
 
 - bookmark: 15 - end
-- left (temporarily?) behind: 10,   12,13,   16,17,18,   21,22,23
+- left (temporarily?) behind: 10,   12,13,   16,17, 18(input ed output),   21,22,23
 
 
 For now I would leave the 'oreilly book a part, its difficulty kills the motivation. Let us start easy with the KISS philosophy, and dive into the 'oreilly later.
