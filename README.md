@@ -1,12 +1,17 @@
 # rust-ilearn
 A repo where I learn rust.
 
+## Structure of the repo
+
+The folder `WaStE` contains trash examples of draft code which is not worthy to be watched, but still testifies I poked it and played around with it. The other three folders contain exercises which might not be very clean, but are worthy to be saved not as 'waste'.
+
+## Sources
 I have now 2 main sources.
 
 1. the online official book.
 It is a good guide but it is written for maybe people with too little background. This is slightly disappointing, but most of all risks to lack the comparison with other languages. For example when introducing rust references somebody would make comparison with cpp, but judging from the approach of the book, it will avoid to dive into such knowledge which could be scary for somebody. Besides, it lacks exercises.
 
-- bookmark: 18 - end (extremely useful pattern syntax!!!)
+- bookmark: 19 - end
 - left behind: 14
 
 2. the oreilly book.
@@ -18,6 +23,15 @@ It totally has the advanced level required, but maybe properly because of this i
 
 For now I would leave the 'oreilly book a part, its difficulty kills the motivation. Let us start easy with the KISS philosophy, and dive into the 'oreilly later.
 
+## plan
+
+ch 20 of official,
+exercise with std::net (kurose? docs on rust?), for example echoserver,
+ch 19 and 20 form oreilly,
+exercises of chapter 2 of oreilly,
+chapter 18 of oreilly,
+more on tokio and networks,
+more on rayon and parallelism
 
 ## exercises
 
