@@ -11,7 +11,7 @@ I have now 2 main sources.
 1. the online official book.
 It is a good guide but it is written for maybe people with too little background. This is slightly disappointing, but most of all risks to lack the comparison with other languages. For example when introducing rust references somebody would make comparison with cpp, but judging from the approach of the book, it will avoid to dive into such knowledge which could be scary for somebody. Besides, it lacks exercises.
 
-- bookmark: 19 - end
+- bookmark: 20.1 - end
 - left behind: 14
 
 2. the oreilly book.
@@ -26,12 +26,22 @@ For now I would leave the 'oreilly book a part, its difficulty kills the motivat
 ## plan
 
 ch 20 of official,
-exercise with std::net (kurose? docs on rust?), for example echoserver,
-ch 19 and 20 form oreilly,
+ch 19 oreilly,
+some SIMPLE physical model with rayon!!! (calculation of physics exercise? plotting?)
+
+ch 20 form oreilly,
+
 exercises of chapter 2 of oreilly,
-chapter 18 of oreilly,
-more on tokio and networks,
-more on rayon and parallelism
+exercise with std::net and tokio async (kurose? docs on rust? echoserver? black hat rust?)
+
+more on tokio (official website)?
+
+chapter 18 of oreilly and more on networks (kurose? docs on rust? echoserver? black hat rust?)
+
+In general my directions seems: 
+1. tokio, concurrency and networks oriented programming (web scraping? penetration testing?)
+2. physical concurrent modelling with visualization (rayon, plotting, csv files, data?)
+
 
 ## exercises
 
