@@ -18,9 +18,9 @@ use hello_server::ThreadPool;
 
 fn main() {
     let listener = TcpListener::bind("localhost:7878").unwrap();
-    let pool = ThreadPool::new(4);
+    let pool = ThreadPool::new(70);
 
-    for stream in listener.incoming() {
+    for stream in listener.incoming().take(30) {
         let stream = stream.unwrap();
 
         pool.execute(|| {
@@ -60,4 +60,5 @@ fn handle_connection(mut stream: TcpStream) {
     let response = format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
 
     stream.write_all(response.as_bytes()).unwrap();
+    stream.flush().unwrap();
 }
