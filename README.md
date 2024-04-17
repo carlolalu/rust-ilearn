@@ -17,7 +17,8 @@ It is a good guide but it is written for maybe people with too little background
 2. the oreilly book.
 It totally has the advanced level required, but maybe properly because of this it is too advanced. Chapter 2 exposes me to concepts which I have no idea about, in particular about networking and concurrency (of which I would still like to learn one day). The book has no exercises but these examples, again.
 
-- bookmark: 18 - end
+
+- bookmark: 2 - Mandelbrot: write image with the updated crate
 - left (temporarily?) behind: 10,   12,13,   16,17, 18(input ed output),   21,22,23
 
 
@@ -51,6 +52,7 @@ online walkthrough: https://www.youtube.com/watch?v=-Jp7sabBCp4&list=PLJbE2Yu2zu
 walkthrough for simple project with some ai (chatgpt, hugging face)
 
 ### ideas: 
+crate `image` at the section 'generating fractals' in the README.md
 telegram-bot,
 visualization things, 
 physical models, 
