@@ -17,7 +17,7 @@ It is a good guide but it is written for maybe people with too little background
 2. the oreilly book.
 It totally has the advanced level required, but maybe properly because of this it is too advanced. Chapter 2 exposes me to concepts which I have no idea about, in particular about networking and concurrency (of which I would still like to learn one day). The book has no exercises but these examples, again.
 
-- bookmark: 15 - end
+- bookmark: 18 - end
 - left (temporarily?) behind: 10,   12,13,   16,17, 18(input ed output),   21,22,23
 
 
@@ -26,16 +26,13 @@ For now I would leave the 'oreilly book a part, its difficulty kills the motivat
 ## plan
 
 ch 19 oreilly,
-some SIMPLE physical model with rayon!!! (calculation of physics exercise? plotting?)
-
+parallel exercises of chapter 2 of oreilly,
 ch 20 form oreilly,
 
-exercises of chapter 2 of oreilly,
-exercise with std::net and tokio async (kurose? docs on rust? echoserver? black hat rust?)
+exercise with std::net and tokio async (kurose? docs on rust? echoserver? black hat rust and other books?). An idea is monitoring certain data and then plot some analysis on it. In this way u get to use both tokio and some plotting library.
 
 more on tokio (official website)?
-
-chapter 18 of oreilly and more on networks (kurose? docs on rust? echoserver? black hat rust?)
+more on networks (kurose? docs on rust? echoserver? black hat rust? and other books?)
 
 In general my directions seems: 
 1. tokio, concurrency and networks oriented programming (web scraping? penetration testing?)
