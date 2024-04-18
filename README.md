@@ -10,17 +10,22 @@ The folder `WaStE` contains trash examples of draft code which is not worthy to 
 ### the oreilly book.
 It totally has the advanced level required, but maybe properly because of this it is too advanced. Chapter 2 exposes me to concepts which I have no idea about, in particular about networking and concurrency (of which I would still like to learn one day). The book has no exercises but these examples, again.
 
-- bookmark: 19 - End
+- bookmark: 20 - From Synchronus to Asynchronus - End
 - left (temporarily?) behind: 10,   12,13,   16,17,  21,22,23
 
-For now I would leave the 'oreilly book a part, its difficulty kills the motivation. Let us start easy with the KISS philosophy, and dive into the 'oreilly later.
+### the official async book
+https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
+
+## the official tokio tutorial
+https://tokio.rs/tokio/tutorial
 
 ## plan
 you MUST do projects to really learn
 
 - ch 20 form oreilly,
+- official async book with its exercises
 - exercise with std::net. An idea is monitoring certain data and then plot some analysis on it. Use the other books you have.
-- more on tokio (official website)
+- tokio official website - tutorial(s)
 - design patterns
 - ex with tokio async (kurose? docs on rust? echoserver? black hat rust and other books?). In this way u get to use both tokio and some plotting library.
 - more on rayon (official website/crate?)
@@ -32,6 +37,7 @@ In general my directions seems:
 3. draw fractals and work with images and gif (search a fractal and implement it)
 
 ## exercises
+Start always easy with the KISS philosophy, and dive into the deeper and more technical stuff later. Try as much as you can, play, do projects.
 
 ### sources: 
 http://nifty.stanford.edu/, 
@@ -45,7 +51,7 @@ walkthrough for simple project with some ai (chatgpt, hugging face)
 ### ideas: 
 crate `image` at the section 'generating fractals' in the README.md
 telegram-bot,
-visualization things, 
+visualization things,
 physical models, 
 advised by victor: build programs to operate on a text-based web-browser, as https://en.wikipedia.org/wiki/W3m ,
 plotting stuff with nalgebra and plotters
