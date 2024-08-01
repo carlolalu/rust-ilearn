@@ -7,10 +7,13 @@ The folder `WaStE` contains trash examples of draft code which is not worthy to 
 
 ## Sources
 
-### the oreilly book.
-It totally has the advanced level required, but maybe properly because of this it is too advanced. Chapter 2 exposes me to concepts which I have no idea about, in particular about networking and concurrency (of which I would still like to learn one day). The book has no exercises but these examples, again.
+### the official rust book
 
-- bookmark: 20 - An Asynchronous Client and Server
+completed
+
+### the oreilly book.
+
+- bookmark: 20 - Primitive Futures and Executors: When Is a Future Worth Polling Again?
 - left (temporarily?) behind: 10,   12,13,   16,17,  21,22,23
 
 ### the official asynchronous book
