@@ -7,9 +7,13 @@ The folder `WaStE` contains trash examples of draft code which is not worthy to 
 
 ## Sources
 
+- the official tokio tutorial: https://tokio.rs/tokio/tutorial , setup
+
+- the oreilly book for async rust: https://www.oreilly.com/library/view/async-rust/9781098149086/     (250 pages)
+- the oreilly book for rust atomics and locks: https://marabos.nl/atomics/    (250 pages)
+
 - the official rust book: COMPLETED
-- the o'reilly book: only the chapters left (temporarily?) behind, i.e. (parts of:) 10,12,13,16,17,21,22,23
-- the official tokio tutorial: https://tokio.rs/tokio/tutorial - 
+- the o'reilly book: COMPLETED, only the chapters left (temporarily?) behind, i.e. (parts of:) 10,12,13,16,17,21,22,23
 
 
 ## plan
