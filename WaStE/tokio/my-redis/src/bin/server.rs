@@ -4,6 +4,7 @@ use bytes::Bytes;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 
+type Db = Arc<Mutex<HashMap<String, Bytes>>>;
 type ShardedDb = Arc<Vec<Mutex<HashMap<String, Bytes>>>>;
 
 #[tokio::main]
