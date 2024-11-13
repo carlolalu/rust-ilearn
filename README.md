@@ -3,11 +3,11 @@ A repo where I learn rust.
 
 ## Structure of the repo
 
-The folder `WaStE` contains trash examples of draft code which is not worthy to be watched, but still testifies I poked it and played around with it. The other three folders contain exercises which might not be very clean, but are worthy to be saved not as 'waste'.
+The folder `waste` contains trash examples of draft code which is not worthy to be watched, but still testifies I poked it and played around with it. The other three folders contain exercises which might not be very clean, but are worthy to be saved not as 'waste'.
 
 ## Sources
 
-- the official tokio tutorial: https://tokio.rs/tokio/tutorial , Shared state - Sharding
+- the official tokio tutorial: https://tokio.rs/tokio/tutorial , Channels
 
 - the oreilly book for async rust: https://www.oreilly.com/library/view/async-rust/9781098149086/     (250 pages)
 - the oreilly book for rust atomics and locks: https://marabos.nl/atomics/    (250 pages)
