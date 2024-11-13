@@ -1,6 +1,6 @@
+use std::rc::Rc;
 use tokio::task;
 use tokio::task::yield_now;
-use std::rc::Rc;
 
 #[tokio::main]
 async fn main() {
