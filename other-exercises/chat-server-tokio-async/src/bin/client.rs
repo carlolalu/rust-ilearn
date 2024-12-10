@@ -1,16 +1,28 @@
 use std::io::Write;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::TcpStream;
-use tokio::{io, sync};
+use tokio::io;
+
+use chat_server_tokio::Dispatch;
+use serde_json;
 
 #[tokio::main]
 async fn main() -> io::Result<()> {
     println!("Welcome to the KabanChat!");
 
-    println!("WARNING: this chat is still in its alfa version, it is therefore absolutely unsecure, \
-    meaning that all that you write will be potentially readable by third parties.");
+    println!(
+        "WARNING: this chat is still in its alfa version, it is therefore absolutely unsecure, \
+    meaning that all that you write will be potentially readable by third parties."
+    );
+    println!();
 
-    print!("Input your name please: ");
+    let stream = TcpStream::connect("127.0.0.1:6440").await.unwrap();
+    let (mut tcp_rd, mut tcp_wr) = tokio::io::split(stream);
+
+    let mut incoming_buffer: Vec<u8> = Vec::with_capacity(256);
+    let mut outgoing_buffer: Vec<u8> = Vec::with_capacity(256);
+
+    print!(r###"Please input your desired userid and press "Enter": "###);
     std::io::stdout().flush().unwrap();
 
     let mut name = String::new();
@@ -19,45 +31,45 @@ async fn main() -> io::Result<()> {
 
     println!();
 
-    let stream = TcpStream::connect("127.0.0.1:6440").await.unwrap();
-    let (mut tcp_rd, mut tcp_wr) = tokio::io::split(stream);
+    // TODO: handle the protocol granting uniqueness of usernames (here loopp to ask usernameto the server)
 
-    let mut incoming: Vec<u8> = Vec::with_capacity(50);
-    let mut outgoing: Vec<u8> = Vec::with_capacity(50);
+    println!(r##"Please, {name}, write your messages and press "Enter" to send them. Type "EXIT" to quit the connection."##);
 
-    println!(r##"Please, {name}, write your messages and press "Enter" to send them."##);
-    println!();
-
-    // managing the tcp reader
+    // managing the tcp writer
     tokio::spawn(async move {
         loop {
-            incoming.clear();
-            let n = tcp_rd.read_buf(&mut incoming).await.unwrap();
+            outgoing_buffer.clear();
 
-            if n > 0 {
-                println!("\nserver:> {}", String::from_utf8(incoming.clone()).unwrap());
-            } else {
-                println!(r##"ATTENTION: no data reaad, closing the reading task"##);
-                break;
+            print!("\n{name}:> ");
+            std::io::stdout().flush().unwrap();
+
+            tokio::io::stdin().read_buf(&mut outgoing_buffer).await.unwrap();
+
+            outgoing_buffer.pop();
+
+            if outgoing_buffer.len() > 0 {
+                let text = String::from_utf8(outgoing_buffer.clone()).unwrap();
+                let outgoing_dispatch = Dispatch::UserMessage {id : name.clone(), text};
+                let serialised = serde_json::to_string(&outgoing_dispatch).unwrap();
+
+                tcp_wr.write_all(serialised.as_bytes()).await.unwrap();
+                tcp_wr.flush().await.unwrap();
             }
         }
     });
 
-    // managing the tcp writer
+    // managing the tcp reader
     loop {
-        outgoing.clear();
-        print!("\n{name}:> ");
-        std::io::stdout().flush().unwrap();
+        incoming_buffer.clear();
+        let n = tcp_rd.read_buf(&mut incoming_buffer).await.unwrap();
 
-        tokio::io::stdin().read_buf(&mut outgoing).await.unwrap();
-
-        outgoing.pop();
-
-        if outgoing.len() > 0 {
-            tcp_wr.write_all(&outgoing[..]).await.unwrap();
-            tcp_wr.flush().await.unwrap();
+        if n > 0 {
+            let incoming_dispatch : Dispatch = serde_json::from_str(&String::from_utf8(incoming_buffer.clone()).unwrap()).unwrap();
+            println!("{incoming_dispatch}");
+        } else {
+            println!(r##"Closing the reading and writing tasks"##);
+            break;
         }
     }
-
     Ok(())
 }

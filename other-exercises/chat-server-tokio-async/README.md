@@ -2,9 +2,9 @@
 
 Implement a chat server (step by-step)
 
-## Steps
+- add some kind of identification for users (not authentication yet). For now this is just a username and does not check for the uniqueness of it.
 
-- why does the server send as message all the previous msgs glued together in sequence?
+## Steps
 
 On a more advanced level:
 
@@ -19,7 +19,7 @@ On a more advanced level:
 
 ### channels and strings
 
-- use Vec<u8> as data to be passed through channels
+- use Dispatch as data to be passed through channels
 
 - convert Vec<u8> -> String by `String::from_utf8()?` e String -> Vec by `string.as_bytes()`
 
