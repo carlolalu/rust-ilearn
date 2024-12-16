@@ -14,35 +14,23 @@ async fn main() -> io::Result<()> {
         "WARNING: this chat is still in its alfa version, it is therefore absolutely unsecure, \
     meaning that all that you write will be potentially readable by third parties."
     );
-
     println!();
 
-    print!(r###"Please input your desired userid and press "Enter": "###);
-    std::io::stdout().flush().expect("## Could not flush the stdout: ");
-
-    let mut name = String::new();
-
-    loop {
-        name.clear();
-        std::io::stdin().read_line(&mut name).expect("## Could not read the stdin: ");
-        let name = name.trim().to_string();
-
-        if name.len() == 0 {
-            print!("An empty name can't be accepted. Please, try input your name again: ");
-            std::io::stdout().flush().expect("## Could not flush the stdout: ");
-            continue;
-        }
-
-        break;
-    }
-
-    println!();
-
+    // Review: login-function, returns read and write half
     let stream = TcpStream::connect("127.0.0.1:6440").await.expect("## Could not connect to the desired server: ");
     let (mut tcp_rd, mut tcp_wr) = tokio::io::split(stream);
 
     let mut incoming_buffer: Vec<u8> = Vec::with_capacity(256);
     let mut outgoing_buffer: Vec<u8> = Vec::with_capacity(256);
+
+    print!(r###"Please input your desired userid and press "Enter": "###);
+    std::io::stdout().flush().expect("## Could not flush the stdout: ");
+
+    let mut name = String::new();
+    std::io::stdin().read_line(&mut name).expect("## Could not read the stdin: ");
+    let name = name.trim().to_string();
+
+    println!();
 
     // send "helo" message
     let helo_msg = Message::new(&name, "helo");
@@ -56,13 +44,16 @@ async fn main() -> io::Result<()> {
     );
 
 
+
+
+
+    // Review: own function maybe?
     // managing the tcp writer
     tokio::spawn(async move {
         loop {
             outgoing_buffer.clear();
 
-            println!();
-            print!("{name}:> ");
+            print!("\n{name}:> ");
             std::io::stdout().flush().expect("## Could not flush the stdout: ");
 
             tokio::io::stdin()
@@ -79,7 +70,7 @@ async fn main() -> io::Result<()> {
                 let serialised = serde_json::to_string(&outgoing_msg).expect("## Could not serialize this string: ");
 
                 tcp_wr.write_all(serialised.as_bytes()).await.expect("## Could not write with TCP: ");
-                tcp_wr.flush().await.expect("## Could not flush the TCP writer: ");
+                tcp_wr.flush().await.expect("## Could not flush the TCP writer: "); // Review: why is the flush required?
             }
         }
     });
@@ -87,6 +78,7 @@ async fn main() -> io::Result<()> {
     // managing the tcp reader
     loop {
         incoming_buffer.clear();
+        // Review: immediately call match on it
         let n = tcp_rd.read_buf(&mut incoming_buffer).await.expect("## Could not read the incoming buf: ");
 
         if n > 0 {
@@ -98,17 +90,4 @@ async fn main() -> io::Result<()> {
         }
     }
     Ok(())
-}
-
-
-
-
-
-#[cfg(test)]
-mod test {
-
-    #[test]
-    fn trim() {
-        assert_eq!("str", "\n\n\nstr\n\n\n".trim());
-    }
 }
