@@ -1,10 +1,19 @@
-use serde::{Deserialize, Serialize};
 use std::fmt;
+
+use serde::{Deserialize, Serialize};
+
+pub type GenericError = Box<dyn std::error::Error + Send + Sync + 'static>;
+pub type Result<T> = std::result::Result<T, GenericError>;
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Message {
     username: String,
     content: String,
+}
+
+pub enum UserStatus {
+    Present,
+    Absent,
 }
 
 impl Message {
@@ -15,30 +24,21 @@ impl Message {
         }
     }
 
-    pub fn uname(&self) -> String {
+    pub fn get_username(&self) -> String {
         self.username.clone()
     }
 
-    pub fn craft_ack_msg(username: &str) -> Message {
-        let content = format!("{username} just joined the chat");
-        Message {
-            username: "SERVER".to_string(),
-            content,
-        }
+    pub fn from_serialized_buffer(buffer: &Vec<u8>) -> Result<Message> {
+        let msg = serde_json::from_str::<Message>(&String::from_utf8(buffer.clone())?)?;
+        Ok(msg)
     }
 
-    // TODO: error handling with Result
-    pub fn from_serialized_buffer(buffer: &Vec<u8>) -> Message {
-        let msg = serde_json::from_str(
-            &String::from_utf8(buffer.clone())
-                .expect("## The incoming msg could not be converted into a String: "),
-        )
-        .expect("## The incoming string could not be deserialized: ");
-        msg
-    }
+    pub fn craft_status_change_msg(username: &str, status: UserStatus) -> Message {
+        let content = match status {
+            UserStatus::Present => format!("{username} just joined the chat"),
+            UserStatus::Absent => format!("{username} just left the chat"),
+        };
 
-    fn craft_final_msg(username: &str) -> Message {
-        let content = format!("{username} just left the chat");
         Message {
             username: "SERVER".to_string(),
             content,
@@ -63,18 +63,22 @@ impl Dispatch {
         Dispatch { userid, msg }
     }
 
-    pub fn extract_msg(self) -> Message {
+    pub fn into_msg(self) -> Message {
         self.msg
     }
 
-    pub fn uid(&self) -> u64 {
+    pub fn get_userid(&self) -> u64 {
         self.userid
     }
 
-    pub fn craft_final_dispatch(userid: u64, username: &str) -> Dispatch {
+    pub fn craft_status_change_dispatch(
+        userid: u64,
+        username: &str,
+        user_status: UserStatus,
+    ) -> Dispatch {
         Dispatch {
             userid,
-            msg: Message::craft_final_msg(username),
+            msg: Message::craft_status_change_msg(username, user_status),
         }
     }
 }

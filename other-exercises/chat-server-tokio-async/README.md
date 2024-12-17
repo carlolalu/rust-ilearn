@@ -2,17 +2,17 @@
 
 Implement a chat server (step by-step)
 
-- add some kind of identification for users (not authentication yet). For now this is just a username and does not check for the uniqueness of it.
+- "keep the handles around, so not to have zombie tasks, i.e. without parents" (otherwise you loose control)
 
-## Steps
+- refactor with asyc functions as A. suggested, but with sub-tasks. lib.rs has already been managed.
 
-On a more advanced level:
+- https://tokio.rs/tokio/topics/shutdown#waiting-for-things-to-finish-shutting-down
 
-1. implement graceful shutdown (see the corresponding article on the tokio tutorial, there are already some tokio features you can use)
+- add identification for users (not authentication yet) as A. advised you, with a data structure where you take and give back the user identifications
 
-2. implement  basic level for an admin authentication: if one gives a specific commands and provides the right password, it can control the server (only one person per time must be granted such access)
+- implement graceful shutdown (see the corresponding article on the tokio tutorial, there are already some tokio features you can use). Use shutdown tokens.
 
-3. eventually use the "Introduction to Control Theory And Its Application to Computing Systems" paper to implement some loop control on such server
+- implement  basic level for an admin authentication: if one gives a specific commands and provides the right password, it can control the server (only one person per time must be granted such access)
 
 
 ## Developer's guide
