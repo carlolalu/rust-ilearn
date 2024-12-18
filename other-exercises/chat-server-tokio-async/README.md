@@ -2,13 +2,15 @@
 
 Implement a chat server (step by-step)
 
-- "keep the handles around, so not to have zombie tasks, i.e. without parents" (otherwise you loose control)
+- IMPLEMENT [graceful shutdown](https://tokio.rs/tokio/topics/shutdown#waiting-for-things-to-finish-shutting-down)
 
-- implement [graceful shutdown](https://tokio.rs/tokio/topics/shutdown#waiting-for-things-to-finish-shutting-down)
+- "keep the handles around, so not to have zombie tasks, i.e. without parents" (otherwise you loose control)
 
 - add identification for users (not authentication yet) as A. advised you, with a data structure where you take and give back the user identifications
 
 - implement  basic level for an admin authentication: if one gives a specific commands and provides the right password, it can control the server (only one person per time must be granted such access)
+
+- add some security and cryptography. Just the basics.
 
 
 ## Developer's guide
