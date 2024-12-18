@@ -5,6 +5,8 @@ use serde::{Deserialize, Serialize};
 pub type GenericError = Box<dyn std::error::Error + Send + Sync + 'static>;
 pub type Result<T> = std::result::Result<T, GenericError>;
 
+pub static SERVER_ADDR: &str = "127.0.0.1:6440";
+
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Message {
     username: String,
